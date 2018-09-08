@@ -1,0 +1,20 @@
+{
+  "name": "apitraslate",
+  "version": "1.0.0",
+  "description": "nodeJS ApiTranslate",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Beniro Vielma",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "google-translate-api": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
