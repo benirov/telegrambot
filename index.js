@@ -15,9 +15,15 @@ app.use(bodyParser.json())
 app.post('/translate/', (req, res) =>
 {
 	console.log("post")
+  let idioma =  req.body.type;
+  let translate = 'es';
+  if(idioma == 'es')
+  {
+    translate = 'en'
+  }
 	// console.log(req.body.data)
 	let message = req.body.data;
-	translate(message, {from: 'es', to: 'en'})
+	translate(message, {from: idioma, to: translate})
   	.then(response =>
     {
     	console.log(response);
