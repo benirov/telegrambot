@@ -16,14 +16,15 @@ app.post('/translate/', (req, res) =>
 {
 	console.log("post")
   let idioma =  req.body.type;
-  let translate = 'es';
+  console.log(req.body)
+  let translateTo = 'es';
   if(idioma == 'es')
   {
-    translate = 'en'
+    translateTo = 'en';
   }
 	// console.log(req.body.data)
 	let message = req.body.data;
-	translate(message, {from: idioma, to: translate})
+	translate(message, {from: `${idioma}`, to: `${translateTo}`})
   	.then(response =>
     {
     	console.log(response);
