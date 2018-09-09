@@ -25,6 +25,20 @@ app.post('/translate/', (req, res) =>
     
 });
 
+app.get('/translate/:string', (req, res) =>
+{
+	let message = req.params;
+	console.log(req.params);
+	translate(message, {from: 'es', to: 'en'})
+  	.then(response =>
+    {
+    	
+       res.status(200).send({response});
+    });
+
+    
+});
+
 app.listen(config.port, () =>
 {
 	console.log(`API REST Corriendo en http://localhost:${config.port}`);
