@@ -14,11 +14,13 @@ app.use(bodyParser.json())
 // app.use('/api', api);
 app.post('/translate/', (req, res) =>
 {
+	console.log("post")
+	// console.log(req.body.data)
 	let message = req.body.data;
 	translate(message, {from: 'es', to: 'en'})
   	.then(response =>
     {
-    	
+    	console.log(response);
        res.status(200).send({response});
     });
 
@@ -27,8 +29,8 @@ app.post('/translate/', (req, res) =>
 
 app.get('/translate/:string', (req, res) =>
 {
+	console.log("get")
 	let message = req.params;
-	console.log(req.params);
 	translate(message, {from: 'es', to: 'en'})
   	.then(response =>
     {
